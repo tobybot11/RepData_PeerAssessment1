@@ -6,4 +6,4 @@ PA1_template.html: PA1_template.Rmd
 
 .PHONY: clean
 clean: 
-	rm PA1_template.html PA1_template.md activity.csv
+	rm -rf PA1_template.html PA1_template.md PA1_template_files activity.csv
