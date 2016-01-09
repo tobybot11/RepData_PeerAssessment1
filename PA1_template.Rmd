@@ -16,6 +16,7 @@ output:
 
 ```{r}
 rm(list=ls())
+unzip("activity.zip")
 df <- read.csv("activity.csv")
 df$Date <- as.Date(df$date, format="%Y-%m-%d")
 dfa <- aggregate(steps ~ Date, data=df, FUN=sum, na.rm=T, na.action=NULL)
@@ -63,6 +64,8 @@ dfmedian <- round(median(dfai$steps.x))
 
 abline(v=dfmean, col="red")
 abline(v=dfmedian, col="blue")
+
+legend('topright', legend=c(paste('Mean -', dfmean), paste('Median -', dfmedian)), col = c('red', 'blue'), lwd=1)
 ```
 
 ## Are there differences in activity patterns between weekdays and weekends?
